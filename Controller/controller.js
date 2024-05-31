@@ -8,7 +8,7 @@ class Controller {
     let counter = 0;
     const userCategory = await this.view.startQuiz(value);
     if (userCategory === undefined) {
-        return value = '';
+        return value = 'Done';
     }
     value += userCategory.category;
     console.log(`Вы выбрали категорию "${userCategory.category}"`);
@@ -24,6 +24,7 @@ class Controller {
     if (userCategory.category === "Фильмы") {
       arrOfObjs = await this.model.getQuestionsAndAnswers("ElbrusFriends.txt");
     }
+    console.log(arrOfObjs);
     for (const question of arrOfObjs) {
       counter = await this.view.pullQuestions(question, counter);
     }

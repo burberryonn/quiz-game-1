@@ -92,7 +92,16 @@ class View {
           choices: ["Harry Poter", "Фильмы", "Ты просто космос…"],
         },
       ]);
-    } 
+    } else if (value === 'Done') {
+      return inquirer.prompt([
+        {
+          type: "list",
+          name: "category",
+          message: "Выберите категорию",
+          choices: ["Harry Poter", "Фильмы", "Ты просто космос…"],
+        },
+      ]);
+    }
   }
 
   async pullQuestions({ question, answer, choices }, counter) {

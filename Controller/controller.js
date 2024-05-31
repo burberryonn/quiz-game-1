@@ -1,3 +1,5 @@
+const play = require('play-sound')();
+
 class Controller {
   constructor(model, view) {
     this.model = model;
@@ -15,12 +17,15 @@ class Controller {
     let arrOfObjs;
 
     if (userCategory.category === "Ты просто космос…") {
+      play.play('./music/nlo_true.mp3',{timeout: 6000})
       arrOfObjs = await this.model.getQuestionsAndAnswers("NLO.txt");
     }
     if (userCategory.category === "Harry Poter") {
+      play.play('./music/Hedwig.mp3',{timeout: 60_000})
       arrOfObjs = await this.model.getQuestionsAndAnswers("HarryPoter.txt");
     }
     if (userCategory.category === "Фильмы") {
+      play.play('./music/taran.mp3',{timeout: 60_000})
       arrOfObjs = await this.model.getQuestionsAndAnswers("Фильмы.txt");
     }
     for (const question of arrOfObjs) {

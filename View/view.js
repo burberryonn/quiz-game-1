@@ -2,85 +2,85 @@ const inquirer = require("inquirer");
 
 class View {
   async startQuiz(value) {
-    if (value === "Harry Poter") {
+    if (value === "🧙🏾 Harry Poter 🧙🏾") {
       return inquirer.prompt([
         {
           type: "list",
           name: "category",
           message: "Выберите категорию",
-          choices: ["Фильмы", "Ты просто космос…"],
+          choices: ["🎞️ Фильмы 🎞️", "👽 Ты просто космос… 👽"],
         },
       ]);
-    } else if (value === "Фильмы") {
+    } else if (value === "🎞️ Фильмы 🎞️") {
       return inquirer.prompt([
         {
           type: "list",
           name: "category",
           message: "Выберите категорию",
-          choices: ["Harry Poter", "Ты просто космос…"],
+          choices: ["🧙🏾 Harry Poter 🧙🏾", "👽 Ты просто космос… 👽"],
         },
       ]);
-    } else if (value === "Ты просто космос…") {
+    } else if (value === "👽 Ты просто космос… 👽") {
       return inquirer.prompt([
         {
           type: "list",
           name: "category",
           message: "Выберите категорию",
-          choices: ["Harry Poter", "Фильмы"],
+          choices: ["🧙🏾 Harry Poter 🧙🏾", "🎞️ Фильмы 🎞️"],
         },
       ]);
-    } else if (value === "Harry PoterТы просто космос…") {
+    } else if (value === "🧙🏾 Harry Poter 🧙🏾👽 Ты просто космос… 👽") {
       return inquirer.prompt([
         {
           type: "list",
           name: "category",
           message: "Выберите категорию",
-          choices: ["Фильмы"],
+          choices: ["🎞️ Фильмы 🎞️"],
         },
       ]);
-    } else if (value === "ФильмыHarry Poter") {
+    } else if (value === "🎞️ Фильмы 🎞️🧙🏾 Harry Poter 🧙🏾") {
       return inquirer.prompt([
         {
           type: "list",
           name: "category",
           message: "Выберите категорию",
-          choices: ["Ты просто космос…"],
+          choices: ["👽 Ты просто космос… 👽"],
         },
       ]);
-    } else if (value === "ФильмыТы просто космос…"){
+    } else if (value === "🎞️ Фильмы 🎞️👽 Ты просто космос… 👽") {
       return inquirer.prompt([
         {
           type: "list",
           name: "category",
           message: "Выберите категорию",
-          choices: ["Harry Poter"],
+          choices: ["🧙🏾 Harry Poter 🧙🏾"],
         },
       ]);
-    } else if (value === "Harry PoterФильмы") {
+    } else if (value === "🧙🏾 Harry Poter 🧙🏾🎞️ Фильмы 🎞️") {
       return inquirer.prompt([
         {
           type: "list",
           name: "category",
           message: "Выберите категорию",
-          choices: ["Ты просто космос…"],
+          choices: ["👽 Ты просто космос… 👽"],
         },
       ]);
-    } else if (value === "Ты просто космос…Harry Poter") {
+    } else if (value === "👽 Ты просто космос… 👽🧙🏾 Harry Poter 🧙🏾") {
       return inquirer.prompt([
         {
           type: "list",
           name: "category",
           message: "Выберите категорию",
-          choices: ["Фильмы"],
+          choices: ["🎞️ Фильмы 🎞️"],
         },
       ]);
-    } else if (value === "Ты просто космос…Фильмы") {
+    } else if (value === "👽 Ты просто космос… 👽🎞️ Фильмы 🎞️") {
       return inquirer.prompt([
         {
           type: "list",
           name: "category",
           message: "Выберите категорию",
-          choices: ["Harry Poter"],
+          choices: ["🧙🏾 Harry Poter 🧙🏾"],
         },
       ]);
     } else if (value === "") {
@@ -89,16 +89,24 @@ class View {
           type: "list",
           name: "category",
           message: "Выберите категорию",
-          choices: ["Harry Poter", "Фильмы", "Ты просто космос…"],
+          choices: [
+            "🧙🏾 Harry Poter 🧙🏾",
+            "🎞️ Фильмы 🎞️",
+            "👽 Ты просто космос… 👽",
+          ],
         },
       ]);
-    } else if (value === 'Done') {
+    } else if (value === "Done") {
       return inquirer.prompt([
         {
           type: "list",
           name: "category",
           message: "Выберите категорию",
-          choices: ["Harry Poter", "Фильмы", "Ты просто космос…"],
+          choices: [
+            "🧙🏾 Harry Poter 🧙🏾",
+            "🎞️ Фильмы 🎞️",
+            "👽 Ты просто космос… 👽",
+          ],
         },
       ]);
     }

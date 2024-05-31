@@ -8,19 +8,19 @@ class Controller {
     let counter = 0;
     const userCategory = await this.view.startQuiz(value);
     if (userCategory === undefined) {
-        return value = 'Done';
+      return (value = "Done");
     }
     value += userCategory.category;
     console.log(`Вы выбрали категорию "${userCategory.category}"`);
     let arrOfObjs;
 
-    if (userCategory.category === "Ты просто космос…") {
+    if (userCategory.category === "👽 Ты просто космос… 👽") {
       arrOfObjs = await this.model.getQuestionsAndAnswers("NLO.txt");
     }
-    if (userCategory.category === "Harry Poter") {
+    if (userCategory.category === "🧙🏾 Harry Poter 🧙🏾") {
       arrOfObjs = await this.model.getQuestionsAndAnswers("HarryPoter.txt");
     }
-    if (userCategory.category === "Фильмы") {
+    if (userCategory.category === "🎞️ Фильмы 🎞️") {
       arrOfObjs = await this.model.getQuestionsAndAnswers("Фильмы.txt");
     }
     for (const question of arrOfObjs) {

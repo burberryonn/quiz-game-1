@@ -10,22 +10,22 @@ class Controller {
     let counter = 0;
     const userCategory = await this.view.startQuiz(value);
     if (userCategory === undefined) {
-        return value = 'Done';
+      return (value = "Done");
     }
     value += userCategory.category;
     console.log(`Вы выбрали категорию "${userCategory.category}"`);
     let arrOfObjs;
 
-    if (userCategory.category === "Ты просто космос…") {
-      play.play('./music/nlo_true.mp3',{timeout: 6000})
+    if (userCategory.category === "👽 Ты просто космос… 👽") {
+            play.play('./music/nlo_true.mp3',{timeout: 6000})
       arrOfObjs = await this.model.getQuestionsAndAnswers("NLO.txt");
     }
-    if (userCategory.category === "Harry Poter") {
-      play.play('./music/Hedwig.mp3',{timeout: 60_000})
+    if (userCategory.category === "🧙🏾 Harry Poter 🧙🏾") {
+            play.play('./music/Hedwig.mp3',{timeout: 60_000})
       arrOfObjs = await this.model.getQuestionsAndAnswers("HarryPoter.txt");
     }
-    if (userCategory.category === "Фильмы") {
-      play.play('./music/taran.mp3',{timeout: 60_000})
+    if (userCategory.category === "🎞️ Фильмы 🎞️") {
+            play.play('./music/taran.mp3',{timeout: 60_000})
       arrOfObjs = await this.model.getQuestionsAndAnswers("Фильмы.txt");
     }
     for (const question of arrOfObjs) {

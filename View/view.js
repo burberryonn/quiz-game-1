@@ -125,10 +125,10 @@ class View {
       ]);
     }
     if (userAnswer.userAnswer.trim().toLowerCase() === answer.toLowerCase()) {
-      console.log("Умничко!! 💜");
+      console.log("Вот это верный мэджик!🧪");
       counter += 100;
     } else {
-      console.log("Не совсем так 😭");
+      console.log("Ноооуу!❌");
     }
     return counter;
   }

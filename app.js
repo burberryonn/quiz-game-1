@@ -6,4 +6,8 @@ const model = new Model();
 const view = new View();
 const controller = new Controller(model, view);
 
-controller.runQuiz()
+async function startnew() {
+    await controller.runQuiz();
+    startnew();
+}
+startnew();

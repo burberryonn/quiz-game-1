@@ -4,21 +4,24 @@ class Controller {
     this.view = view;
   }
 
-  async runQuiz() {
+  async runQuiz(value) {
     let counter = 0;
-    const userCategory = await this.view.startQuiz();
-
+    const userCategory = await this.view.startQuiz(value);
+    if (userCategory === undefined) {
+        return value = '';
+    }
+    value += userCategory.category;
     console.log(`Вы выбрали категорию "${userCategory.category}"`);
     let arrOfObjs;
     console.log(userCategory.category, "CATEGORY");
 
-    if (userCategory.category === "Смешное") {
+    if (userCategory.category === "Ты просто космос…") {
       arrOfObjs = await this.model.getQuestionsAndAnswers("funny.txt");
     }
-    if (userCategory.category === "Еда") {
+    if (userCategory.category === "Harry Poter") {
       arrOfObjs = await this.model.getQuestionsAndAnswers("eat.txt");
     }
-    if (userCategory.category === "Эльбрус") {
+    if (userCategory.category === "Фильмы") {
       arrOfObjs = await this.model.getQuestionsAndAnswers("ElbrusFriends.txt");
     }
     for (const question of arrOfObjs) {
@@ -27,6 +30,7 @@ class Controller {
     console.log(
       `Поздравляем, ты выиграл ${counter} очков в категории: ${userCategory.category}`
     );
+    return value;
   }
 }
 

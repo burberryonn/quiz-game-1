@@ -15,13 +15,13 @@ class Controller {
     let arrOfObjs;
 
     if (userCategory.category === "Ты просто космос…") {
-      arrOfObjs = await this.model.getQuestionsAndAnswers("funny.txt");
+      arrOfObjs = await this.model.getQuestionsAndAnswers("NLO.txt");
     }
     if (userCategory.category === "Harry Poter") {
-      arrOfObjs = await this.model.getQuestionsAndAnswers("eat.txt");
+      arrOfObjs = await this.model.getQuestionsAndAnswers("HarryPoter.txt");
     }
     if (userCategory.category === "Фильмы") {
-      arrOfObjs = await this.model.getQuestionsAndAnswers("ElbrusFriends.txt");
+      arrOfObjs = await this.model.getQuestionsAndAnswers("Фильмы.txt");
     }
     for (const question of arrOfObjs) {
       counter = await this.view.pullQuestions(question, counter);

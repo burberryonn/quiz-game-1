@@ -13,7 +13,6 @@ class Controller {
     value += userCategory.category;
     console.log(`Вы выбрали категорию "${userCategory.category}"`);
     let arrOfObjs;
-    console.log(userCategory.category, "CATEGORY");
 
     if (userCategory.category === "Ты просто космос…") {
       arrOfObjs = await this.model.getQuestionsAndAnswers("funny.txt");
@@ -24,7 +23,6 @@ class Controller {
     if (userCategory.category === "Фильмы") {
       arrOfObjs = await this.model.getQuestionsAndAnswers("ElbrusFriends.txt");
     }
-    console.log(arrOfObjs);
     for (const question of arrOfObjs) {
       counter = await this.view.pullQuestions(question, counter);
     }
